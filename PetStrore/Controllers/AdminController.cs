@@ -62,6 +62,7 @@ namespace PetStrore.Controllers
             if (admin)
                 return View();
             return RedirectToAction("Login");
+            //
         }
         [HttpPost]
         public IActionResult DeleteAnimal(int animalId)
