@@ -1,0 +1,30 @@
+﻿@model PetStrore.Models.Category
+@{
+    ViewBag.Title = "AddCategory";
+}
+@await Html.PartialAsync("_PartialAdminView")
+<h3>@ViewBag.Message</h3>
+<form asp-controller="Admin" asp-action="AddCategory" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="All" class="alert-danger">
+    </div>
+    <div class="col-xl-10">
+        <h1 class="mb-4" style="color:#008B8B">Add Category</h1>
+
+        <div class="card" style="border-radius: 15px;">
+            <div class="card-body">
+                <div class="row align-items-center pt-4 pb-3">
+                    <div class="col-md-3 ps-5">
+                        <label class="mb-0" asp-for="Name">Category Name</label>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                        <input type="text" asp-for="Name" class="form-control form-control-lg" placeholder="Category Name">
+                        <span asp-validation-for="Name"></span>
+                    </div>
+                <div class="px-5 py-4">
+                    <button type="submit" class="btn btn-primary btn-lg">Add Category</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>

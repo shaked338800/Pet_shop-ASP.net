@@ -1,0 +1,76 @@
+﻿@model PetStrore.Models.Animal
+@{
+    ViewBag.Title = "ContactUsPage";
+}
+<section class="vh-100" style="background-color: transparent;">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-9">
+                <form action="https://formspree.io/f/xeqdqznp" method="POST" enctype="multipart/form-data" name="EmailForm">
+
+                    <h1 class="mb-4" style="color:#008B8B">Adoption</h1>
+
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body">
+
+                            <div class="row align-items-center pt-4 pb-3">
+                                <div class="col-md-3 ps-5">
+
+                                    <h6 class="mb-0">Full name</h6>
+
+                                </div>
+                                <div class="col-md-9 pe-5">
+
+                                    <input type="text" name="Contact-Name" class="form-control form-control-lg" />
+
+                                </div>
+                            </div>
+
+                            <hr class="mx-n3">
+
+                            <div class="row align-items-center py-3">
+                                <div class="col-md-3 ps-5">
+
+                                    <h6 class="mb-0">Email address</h6>
+
+                                </div>
+                                <div class="col-md-9 pe-5">
+
+                                    <input type="email" name="Contact-Email" class="form-control form-control-lg" placeholder="example@example.com" />
+
+                                </div>
+                            </div>
+
+                            <hr class="mx-n3">
+
+                            <div class="row align-items-center py-3">
+                                <div class="col-md-3 ps-5">
+
+                                    <h6 class="mb-0">Message</h6>
+
+                                </div>
+                                <div class="col-md-9 pe-5">
+
+                                    <textarea class="form-control" rows="3" name="Contact-Message" placeholder="Animal Information">
+Hi,
+I Would Like To Adopt This Animal: 
+Name: @Model.Name
+Age: @Model.Age years old
+Category: @Model.Category!.Name
+                                    </textarea>
+
+                                </div>
+                            </div>
+
+                            <hr class="mx-n3">
+
+                            <div class="px-5 py-4">
+                                <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

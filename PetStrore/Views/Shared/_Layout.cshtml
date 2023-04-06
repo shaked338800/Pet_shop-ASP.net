@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/css/bootstrap-grid.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/css/bootstrap-reboot.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/css/bootstrap-utilities.css" rel="stylesheet" />
+    <link href="~/CSS/Style.css" rel="stylesheet"/>
+    <link rel="icon" type="image/x-icon" href="~/images/favicon.png">
+</head>
+<body style="background-image:url(https://thumbs.dreamstime.com/z/cat-dog-paw-seamless-patterns-backgrounds-pet-shop-websites-prints-animal-footprint-cute-trendy-colors-pattern-125327438.jpg);background-size:cover">
+    <div class="container site-header sticky-top py-1">
+        <header class="d-flex flex-wrap justify-content-center py-3 md-4 border-bottom">
+            <a asp-controller="Home" asp-action="HomePage" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                <img class="bi me-2 img-Border" src="https://previews.123rf.com/images/sokolfly/sokolfly1903/sokolfly190300011/119917929-vector-pet-shop-logo-design-template-black-and-white-animal-icon-label-for-store-veterinary-clinic-h.jpg?fj=1" width="90" height="50">
+                <span class="fs-4" style="color:#008B8B">Tzarfti pet store</span>
+            </a>
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a asp-controller="Home" asp-action="HomePage" class="nav-link" aria-current="page">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a asp-controller="Catalog" asp-action="Catalog" class="nav-link">CATalog</a>
+                </li>
+                <li class="nav-item">
+                    <a asp-controller="Home" asp-action="ContactUsPage" class="nav-link">Contact Us</a>
+                </li>
+            </ul>
+        </header>
+    </div>
+    @RenderBody()
+    <script type="text/javascript" src="~/JavaScript/TabsJs.js"></script>
+    <script type="text/javascript" src="~/lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

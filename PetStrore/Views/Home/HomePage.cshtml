@@ -1,0 +1,23 @@
+﻿@model IEnumerable<PetStrore.Models.Animal>
+@{
+    ViewBag.Title = "HomePage";
+}
+<h1 style="text-align:center;color:#008B8B">Leading Animals</h1>
+<div class="div-center" style="margin-left:8rem;margin-right:8rem">
+    @foreach (var animal in Model)
+    {
+        <div class="col" style="display:block;padding:2.5rem;" >
+            <div class="card mb-4 rounded-3 shadow-sm" style="background-image:url(@animal.ImageUrl);background-size:cover;">
+                <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">@animal.Name</h4>
+                </div>
+                <div class="card-body" style="height:20rem;position:relative">
+                    <h1 class="card-title pricing-card-title">@animal.Category!.Name</h1>
+                    <p style="font-weight:bold">@animal.Description</p>
+                    <h4>Popularity: @animal.Comments!.Count Comments</h4>
+                    <a asp-controller="Catalog" asp-action="ViewAnimal" asp-route-animalId="@animal.AnimalId"><button type="button" class="w-100 btn btn-lg btn-primary" style="position:absolute;bottom:0;right:0">Details</button></a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

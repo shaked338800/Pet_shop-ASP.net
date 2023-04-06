@@ -1,0 +1,78 @@
+﻿@model PetStrore.Models.Animal
+@{
+    ViewBag.Title = "AddAnimal";
+}
+@await Html.PartialAsync("_PartialAdminView")
+<form asp-controller="Admin" asp-action="AddAnimal" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="All" class="alert-danger">
+    </div>
+    <div class="col-xl-10">
+        <h1 class="mb-4" style="color:#008B8B">Add Animal</h1>
+
+        <div class="card" style="border-radius: 15px;">
+            <div class="card-body">
+                <div class="row align-items-center pt-4 pb-3">
+                    <div class="col-md-3 ps-5">
+                        <label class="mb-0" asp-for="Name">Animal Name</label>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                        <input type="text" asp-for="Name" class="form-control form-control-lg" placeholder="Animal Name">
+                        <span asp-validation-for="Name"></span>
+                    </div>
+                </div>
+                <hr class="mx-n3">
+
+                <div class="row align-items-center py-3">
+                    <div class="col-md-3 ps-5">
+                        <label class="mb-0" asp-for="Age">Animal Age</label>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                        <input type="number" min="0" asp-for="Age" class="form-control form-control-lg" placeholder="Age of the Animal">
+                        <span asp-validation-for="Age"></span>
+                    </div>
+                </div>
+
+                <hr class="mx-n3">
+
+                <div class="row align-items-center py-3">
+                    <div class="col-md-3 ps-5">
+                        <label class="mb-0" asp-for="Description">Description</label>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                        <textarea class="form-control" asp-for="Description" rows="3" placeholder="Description"></textarea>
+                        <span asp-validation-for="Description"></span>
+                    </div>
+                </div>
+
+                <hr class="mx-n3">
+
+                <div class="row align-items-center py-3">
+                    <label asp-for="CategoryId" class="mb-0">Category</label>
+                    <select id="category" asp-for="CategoryId">
+                        @foreach (var c in @ViewBag.Categories)
+                        {
+                            <option value="@c.CategoryId">@c.Name</option>
+                        }
+                    </select>
+                </div>
+                <hr class="mx-n3">
+                <div class="row align-items-center py-3">
+                    <div class="col-md-3 ps-5">
+                        <label name="ifile" class="mb-0">Upload Animal Image</label>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                      <input type="text" asp-for="ImageUrl" class="form-control form-control-lg" placeholder="Url of the animal image">
+                        <span asp-validation-for="ImageUrl"></span>
+                    </div>
+                </div>
+
+                <hr class="mx-n3">
+
+                <div class="px-5 py-4">
+                    <button type="submit" class="btn btn-primary btn-lg">Add Animal</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,39 @@
+﻿@model PetStrore.Models.Animal
+@{
+    ViewBag.Title = "ViewAnimal";
+}
+<div class="text-center">
+    <div class="form-signin m-auto" style="width:25%">
+
+        <img src="@Model.ImageUrl" width="200" alt="@Model.Name Image" />
+        <h1>@Model.Name</h1>
+        <h3>Age:</h3>
+        <h5>@Model.Age</h5>
+        <h3>Category:</h3>
+        <h5>@Model.Category!.Name</h5>
+        <h3>Description:</h3>
+        <p>@Model.Description</p>
+        <br />
+        <form asp-controller="Catalog" asp-action="Adoption" method="post">
+            <input name="animalId" type="hidden" value="@Model.AnimalId" />
+            <button type="submit">Adoption</button>
+        </form>
+        <form asp-controller="Catalog" asp-action="AddComment" method="post">
+            <input type="text" name="commentText" />
+            <input name="animalId" type="hidden" value="@Model.AnimalId" />
+            <button type="submit">Send Comment</button>
+        </form>
+        <ul class="list-group">
+            @if (Model.Comments! != null)
+            {
+                @foreach (var c in Model.Comments!)
+                {
+                    <li class="list-group-item">@c.Text</li>
+                }
+            }
+        </ul>
+
+    </div>
+</div>
+
+
